@@ -1,6 +1,10 @@
 defmodule PhoenixComponentFolders.Application do
   use Application
 
+  @moduledoc """
+  Setup for OTP supervisors and workers.
+  """
+
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
   def start(_type, _args) do
