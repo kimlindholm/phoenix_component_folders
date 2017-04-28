@@ -8,6 +8,7 @@ defmodule PhoenixComponentFolders.Mixfile do
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      start_permanent: Mix.env == :prod,
+     aliases: aliases(),
      deps: deps()]
   end
 
@@ -33,5 +34,10 @@ defmodule PhoenixComponentFolders.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"}]
+  end
+
+  defp aliases do
+    ["s": ["phx.server"],
+     "r": ["phx.routes"]]
   end
 end
