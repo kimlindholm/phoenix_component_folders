@@ -25,10 +25,11 @@ defmodule PhoenixComponentFolders.Web do
     end
   end
 
-  def view do
+  def view(opts \\
+      [root: "lib/phoenix_component_folders/web/templates",
+       namespace: PhoenixComponentFolders.Web]) do
     quote do
-      use Phoenix.View, root: "lib/phoenix_component_folders/web/templates",
-                        namespace: PhoenixComponentFolders.Web
+      use Phoenix.View, unquote(opts)
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
@@ -39,6 +40,7 @@ defmodule PhoenixComponentFolders.Web do
       import PhoenixComponentFolders.Web.Router.Helpers
       import PhoenixComponentFolders.Web.ErrorHelpers
       import PhoenixComponentFolders.Web.Gettext
+      import PhoenixComponentFolders.Web.Components.ComponentHelpers
     end
   end
 
@@ -62,5 +64,8 @@ defmodule PhoenixComponentFolders.Web do
   """
   defmacro __using__(which) when is_atom(which) do
     apply(__MODULE__, which, [])
+  end
+  defmacro __using__({which, opts}) when is_atom(which) do
+    apply(__MODULE__, which, [opts])
   end
 end
