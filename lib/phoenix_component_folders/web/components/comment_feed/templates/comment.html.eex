@@ -1,0 +1,12 @@
+<% comment = assigns[:item] %>
+
+<li class="media">
+  <div class="media-body">
+    <h4 class="media-heading">
+      <%= comment.author %>
+    </h4>
+    <p>
+      <%= comment.content %>
+    </p>
+  </div>
+</li>

@@ -1,0 +1,5 @@
+<h2>Latest comments</h2>
+
+<ul class="media-list">
+  <%= assigns[:do] %>
+</ul>
