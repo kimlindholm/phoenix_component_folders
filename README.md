@@ -63,7 +63,13 @@ end
 
 ### Done
 
-That's it. Now you're ready to add some templates. See commit [Add example components](https://github.com/kimlindholm/phoenix_component_folders/commit/cf1552a6975208a712cbf1e6f94f4e54fe2903f0) for a minimal example and add controllers / channels to your UI components as needed.
+That's it. Now you're ready to add some templates. See commit [Add example components](https://github.com/kimlindholm/phoenix_component_folders/commit/cf1552a6975208a712cbf1e6f94f4e54fe2903f0) for a minimal example and add controllers / channels to your UI components as needed. Let's finish up with some usage examples:
+
+```eex
+<%= c :comment_feed, :comments, assigns %>   <!-- pass all assigns from controller -->
+<%= c :comment_feed, :reply_form %>          <!-- no assigns -->
+<%= c :comment_feed %>                       <!-- default to index.html.eex template -->
+```
 
 In all the code above, remember to replace occurences of `MyApp`, `my_app`, `PhoenixComponentFolders` and `phoenix_component_folders` with your app's name.
 
