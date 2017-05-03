@@ -6,7 +6,7 @@ defmodule PhoenixComponentFolders.Web.Components.ComponentHelpers do
   Conveniences for reusable UI components
   """
 
-  def c(namespace, name, assigns) do
+  def c(namespace, name \\ :index, assigns \\ []) do
     component(namespace, template(name), assigns)
   end
 
