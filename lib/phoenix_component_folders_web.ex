@@ -1,46 +1,47 @@
-defmodule PhoenixComponentFolders.Web do
+defmodule PhoenixComponentFoldersWeb do
   @moduledoc """
-  A module that keeps using definitions for controllers,
-  views and so on.
+  The entrypoint for defining your web interface, such
+  as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use PhoenixComponentFolders.Web, :controller
-      use PhoenixComponentFolders.Web, :view
+      use PhoenixComponentFoldersWeb, :controller
+      use PhoenixComponentFoldersWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
   on imports, uses and aliases.
 
   Do NOT define functions inside the quoted expressions
-  below.
+  below. Instead, define any helper function in modules
+  and import those modules here.
   """
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: PhoenixComponentFolders.Web
+      use Phoenix.Controller, namespace: PhoenixComponentFoldersWeb
       import Plug.Conn
-      import PhoenixComponentFolders.Web.Router.Helpers
-      import PhoenixComponentFolders.Web.Gettext
+      import PhoenixComponentFoldersWeb.Router.Helpers
+      import PhoenixComponentFoldersWeb.Gettext
     end
   end
 
   def view(opts \\
-      [root: "lib/phoenix_component_folders/web/templates",
-       namespace: PhoenixComponentFolders.Web]) do
+      [root: "lib/phoenix_component_folders_web/templates",
+       namespace: PhoenixComponentFoldersWeb]) do
     quote do
       use Phoenix.View, unquote(opts)
 
       # Import convenience functions from controllers
-      import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
+      import Phoenix.Controller, only: [get_flash: 2, view_module: 1]
 
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import PhoenixComponentFolders.Web.Router.Helpers
-      import PhoenixComponentFolders.Web.ErrorHelpers
-      import PhoenixComponentFolders.Web.Gettext
-      import PhoenixComponentFolders.Web.Components.ComponentHelpers
+      import PhoenixComponentFoldersWeb.Router.Helpers
+      import PhoenixComponentFoldersWeb.ErrorHelpers
+      import PhoenixComponentFoldersWeb.Gettext
+      import PhoenixComponentFoldersWeb.Components.ComponentHelpers
     end
   end
 
@@ -55,7 +56,7 @@ defmodule PhoenixComponentFolders.Web do
   def channel do
     quote do
       use Phoenix.Channel
-      import PhoenixComponentFolders.Web.Gettext
+      import PhoenixComponentFoldersWeb.Gettext
     end
   end
 

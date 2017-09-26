@@ -6,10 +6,10 @@
 use Mix.Config
 
 # Configures the endpoint
-config :phoenix_component_folders, PhoenixComponentFolders.Web.Endpoint,
+config :phoenix_component_folders, PhoenixComponentFoldersWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "YTCeWFaKKX8s4po7hdnOJdLt9d7CE3w7ZOhPIhnHPks6XfNYYLKSP7/oAwcu16ga",
-  render_errors: [view: PhoenixComponentFolders.Web.ErrorView, accepts: ~w(html json)],
+  render_errors: [view: PhoenixComponentFoldersWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: PhoenixComponentFolders.PubSub,
            adapter: Phoenix.PubSub.PG2]
 

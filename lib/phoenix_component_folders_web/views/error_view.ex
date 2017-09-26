@@ -1,5 +1,5 @@
-defmodule PhoenixComponentFolders.Web.ErrorView do
-  use PhoenixComponentFolders.Web, :view
+defmodule PhoenixComponentFoldersWeb.ErrorView do
+  use PhoenixComponentFoldersWeb, :view
 
   def render("404.html", _assigns) do
     "Page not found"

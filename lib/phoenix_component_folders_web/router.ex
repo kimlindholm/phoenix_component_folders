@@ -1,5 +1,5 @@
-defmodule PhoenixComponentFolders.Web.Router do
-  use PhoenixComponentFolders.Web, :router
+defmodule PhoenixComponentFoldersWeb.Router do
+  use PhoenixComponentFoldersWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,14 @@ defmodule PhoenixComponentFolders.Web.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", PhoenixComponentFolders.Web do
+  scope "/", PhoenixComponentFoldersWeb do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PhoenixComponentFolders.Web do
+  # scope "/api", PhoenixComponentFoldersWeb do
   #   pipe_through :api
   # end
 end

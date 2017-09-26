@@ -1,5 +1,5 @@
-defmodule PhoenixComponentFolders.Web.Components.ComponentHelpers do
-  alias PhoenixComponentFolders.Web.Components
+defmodule PhoenixComponentFoldersWeb.Components.ComponentHelpers do
+  alias PhoenixComponentFoldersWeb.Components
   alias Phoenix.Naming
 
   @moduledoc """
@@ -31,8 +31,8 @@ defmodule PhoenixComponentFolders.Web.Components.ComponentHelpers do
   end
 
   def view_opts(namespace) do
-    %{root: "lib/phoenix_component_folders/web/components/#{namespace}/templates",
-      namespace: PhoenixComponentFolders.Web,
+    %{root: "lib/phoenix_component_folders_web/components/#{namespace}/templates",
+      namespace: PhoenixComponentFoldersWeb,
       path: ""}
   end
 

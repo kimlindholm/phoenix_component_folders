@@ -1,7 +1,7 @@
-defmodule PhoenixComponentFolders.Web.Endpoint do
+defmodule PhoenixComponentFoldersWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :phoenix_component_folders
 
-  socket "/socket", PhoenixComponentFolders.Web.UserSocket
+  socket "/socket", PhoenixComponentFoldersWeb.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -36,19 +36,22 @@ defmodule PhoenixComponentFolders.Web.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_phoenix_component_folders_key",
-    signing_salt: "CGO+3ysq"
+    signing_salt: "49aVCPds"
 
-  plug PhoenixComponentFolders.Web.Router
+  plug PhoenixComponentFoldersWeb.Router
 
   @doc """
-  Dynamically loads configuration from the system environment
-  on startup.
+  Callback invoked for dynamically configuring the endpoint.
 
-  It receives the endpoint configuration from the config files
-  and must return the updated configuration.
+  It receives the endpoint configuration and checks if
+  configuration should be loaded from the system environment.
   """
-  def load_from_system_env(config) do
-    port = System.get_env("PORT") || raise "expected the PORT environment variable to be set"
-    {:ok, Keyword.put(config, :http, [:inet6, port: port])}
+  def init(_key, config) do
+    if config[:load_from_system_env] do
+      port = System.get_env("PORT") || raise "expected the PORT environment variable to be set"
+      {:ok, Keyword.put(config, :http, [:inet6, port: port])}
+    else
+      {:ok, config}
+    end
   end
 end

@@ -1,5 +1,5 @@
-defmodule PhoenixComponentFolders.Web.PageControllerTest do
-  use PhoenixComponentFolders.Web.ConnCase
+defmodule PhoenixComponentFoldersWeb.PageControllerTest do
+  use PhoenixComponentFoldersWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

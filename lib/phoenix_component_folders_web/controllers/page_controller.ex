@@ -1,5 +1,5 @@
-defmodule PhoenixComponentFolders.Web.PageController do
-  use PhoenixComponentFolders.Web, :controller
+defmodule PhoenixComponentFoldersWeb.PageController do
+  use PhoenixComponentFoldersWeb, :controller
 
   def index(conn, _params) do
     render conn, "index.html", comments: example_comments()
@@ -9,5 +9,4 @@ defmodule PhoenixComponentFolders.Web.PageController do
     [%{author: "Jack", content: "Lorem ipsum"},
      %{author: "Linda", content: "Dolor sit amet"}]
   end
-
 end
