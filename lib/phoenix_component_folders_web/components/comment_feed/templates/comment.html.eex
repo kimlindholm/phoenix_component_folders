@@ -1,4 +1,4 @@
-<% comment = assigns[:item] %>
+<% comment = @item %>
 
 <li class="media">
   <div class="media-body">
