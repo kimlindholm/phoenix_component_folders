@@ -9,33 +9,34 @@ Reusable UI components on Phoenix framework
 If you're using Phoenix to render rich UI components (à la React or Vue), it might be more convenient to group all related code and tests into separate component folders and to make use of some view helpers:
 
 <p align="center">
-  <img alt="Phoenix Component Folders Screenshot" src="https://cloud.githubusercontent.com/assets/1413569/25590614/7896ae5e-2edb-11e7-9d5c-d4a11e234726.png">
+  <img alt="Phoenix Component Folders Screenshot" width="832"
+       src="https://user-images.githubusercontent.com/1413569/30855028-af376c5c-a2dd-11e7-9eb1-c4ddad3e6313.png" />
 </p>
 
-Here's how to do it on **Phoenix 1.3**. If you're using version 1.2, just note some minor changes like replacing path `lib/my_app/web` with `web`.
+Here's how to do it on **Phoenix 1.3**. If you're using version 1.2, just note some minor changes like replacing path `lib/my_app_web` with `web`.
 
 ## Tutorial
 
 ### Step 1: Add `component_helpers.ex`
 
-Grab file [`component_helpers.ex`](https://github.com/kimlindholm/phoenix_component_folders/blob/master/lib/phoenix_component_folders/web/components/component_helpers.ex) and place it in new folder `lib/my_app/web/components`.
+Grab file [`component_helpers.ex`](https://github.com/kimlindholm/phoenix_component_folders/blob/master/lib/phoenix_component_folders_web/components/component_helpers.ex) and place it in new folder `lib/my_app_web/components`.
 
-### Step 2: Edit `web.ex`
+### Step 2: Edit `lib/my_app_web.ex`
 
 ```diff
 -  def view do
 +  def view(opts \\
-+      [root: "lib/my_app/web/templates",
-+       namespace: MyApp.Web]) do
++      [root: "lib/my_app_web/templates",
++       namespace: MyAppWeb]) do
      quote do
--      use Phoenix.View, root: "lib/my_app/web/templates",
--                        namespace: MyApp.Web
+-      use Phoenix.View, root: "lib/my_app_web/templates",
+-                        namespace: MyAppWeb
 +      use Phoenix.View, unquote(opts)
 
        # etc...
 
-       import MyApp.Web.Gettext
-+      import MyApp.Web.Components.ComponentHelpers
+       import MyAppWeb.Gettext
++      import MyAppWeb.Components.ComponentHelpers
      end
    end
 
@@ -52,18 +53,18 @@ Grab file [`component_helpers.ex`](https://github.com/kimlindholm/phoenix_compon
 
 ### Step 3: Add View
 
-Next, you'll need to add a view for each component _namespace_. For instance, as in the screen shot above, for namespace `:comment_feed` you'd create file `lib/my_app/web/components/comment_feed/comment_feed_view.ex`:
+Next, you'll need to add a view for each component _namespace_. For instance, as in the screen shot above, for namespace `:comment_feed` you'd create file `lib/my_app_web/components/comment_feed/comment_feed_view.ex`:
 
 ```elixir
-defmodule MyApp.Web.Components.CommentFeedView do
-  alias MyApp.Web.Components.ComponentHelpers
-  use MyApp.Web, {:view, ComponentHelpers.view_opts(:comment_feed)}
+defmodule MyAppWeb.Components.CommentFeedView do
+  alias MyAppWeb.Components.ComponentHelpers
+  use MyAppWeb, {:view, ComponentHelpers.view_opts(:comment_feed)}
 end
 ```
 
 ### Done
 
-That's it. Now you're ready to add some templates. See commit [Add example components](https://github.com/kimlindholm/phoenix_component_folders/commit/cf1552a6975208a712cbf1e6f94f4e54fe2903f0) for a minimal example and add controllers / channels to your UI components as needed. Let's finish up with some usage examples:
+That's it. Now you're ready to add some templates. See commits [Add example components](https://github.com/kimlindholm/phoenix_component_folders/commit/cf1552a6975208a712cbf1e6f94f4e54fe2903f0) and [Migrate example components to the new 1.3 directory structure](https://github.com/kimlindholm/phoenix_component_folders/commit/3960fc08b6f6158154cd32c0920da4a7d1c904d0) for a minimal example and add controllers / channels to your UI components as needed. Let's finish up with some usage examples:
 
 ```eex
 <%= c :comment_feed, :comments, assigns %>   <!-- pass all assigns from controller -->
@@ -83,7 +84,7 @@ In all the code above, remember to replace occurences of `MyApp`, `my_app`, `Pho
 
 ### Requirements
 
-* Phoenix 1.3.0-rc or later
+* Phoenix 1.3.0 or later
 * Elixir 1.4 or later
 * Erlang 19 or later
 
