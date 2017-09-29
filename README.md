@@ -1,5 +1,7 @@
 # Phoenix Component Folders
 
+[![CircleCI](https://circleci.com/gh/kimlindholm/phoenix_component_folders/tree/master.svg?style=shield)](https://circleci.com/gh/kimlindholm/phoenix_component_folders/tree/master)
+
 Reusable UI components on Phoenix framework
 
 > Quick tutorial and demo app
