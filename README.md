@@ -1,6 +1,7 @@
 # Phoenix Component Folders
 
 [![CircleCI](https://circleci.com/gh/kimlindholm/phoenix_component_folders/tree/master.svg?style=shield)](https://circleci.com/gh/kimlindholm/phoenix_component_folders/tree/master)
+[![codebeat badge](https://codebeat.co/badges/bb4bb0c2-e08c-4c13-b1a3-07b5f354a071)](https://codebeat.co/projects/github-com-kimlindholm-phoenix_component_folders-master)
 [![Dependency Status](https://www.versioneye.com/user/projects/59cdfd98368b083214208a92/badge.svg?style=shield)](https://www.versioneye.com/user/projects/59cdfd98368b083214208a92)
 
 Reusable UI components on Phoenix framework
