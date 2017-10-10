@@ -3,10 +3,12 @@
     %{
       name: "default",
       files: %{
-        included: ["lib/", "src/", "web/", "apps/", "test/"],
+        included: ["lib/", "src/", "web/", "apps/", "test/", "spec/"],
         excluded: [~r"/_build/", ~r"/deps/"]
       },
       requires: [],
+      strict: true,
+      color: true,
       check_for_updates: false,
       #
       # You can customize the parameters of any check by adding a second element
