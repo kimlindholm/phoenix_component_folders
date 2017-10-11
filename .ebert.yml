@@ -1,0 +1,18 @@
+engines:
+  credo:
+    enabled: true
+  fixme:
+    enabled: true
+  eslint:
+    enabled: true
+  csslint:
+    enabled: false
+  scss-lint:
+    enabled: true
+  remark-lint:
+    enabled: true
+exclude_paths:
+- config
+- priv
+- test
+- spec
