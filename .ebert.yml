@@ -5,6 +5,8 @@ engines:
     enabled: true
   eslint:
     enabled: true
+    exclude_paths:
+      - assets/*config.js
   csslint:
     enabled: false
   scss-lint:
