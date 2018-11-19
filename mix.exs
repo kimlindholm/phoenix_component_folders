@@ -5,10 +5,10 @@ defmodule PhoenixComponentFolders.Mixfile do
     [
       app: :phoenix_component_folders,
       version: "0.0.1",
-      elixir: "~> 1.5.1",
-      elixirc_paths: elixirc_paths(Mix.env),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers,
-      start_permanent: Mix.env == :prod,
+      elixir: "~> 1.7.4",
+      elixirc_paths: elixirc_paths(Mix.env()),
+      compilers: [:phoenix, :gettext] ++ Mix.compilers(),
+      start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
     ]
@@ -26,7 +26,7 @@ defmodule PhoenixComponentFolders.Mixfile do
 
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "test/support"]
-  defp elixirc_paths(_),     do: ["lib"]
+  defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
   #
@@ -38,15 +38,15 @@ defmodule PhoenixComponentFolders.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
-      {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.0.0", only: [:dev, :test], runtime: false},
       {:cowboy, "~> 1.0"}
     ]
   end
 
   defp aliases do
     [
-      "s": ["phx.server"],
-      "r": ["phx.routes"]
+      s: ["phx.server"],
+      r: ["phx.routes"]
     ]
   end
 end
