@@ -1,6 +1,6 @@
 defmodule PhoenixComponentFoldersWeb.Components.ComponentHelpers do
-  alias PhoenixComponentFoldersWeb.Components
   alias Phoenix.Naming
+  alias PhoenixComponentFoldersWeb.Components
 
   @moduledoc """
   Conveniences for reusable UI components
@@ -26,14 +26,16 @@ defmodule PhoenixComponentFoldersWeb.Components.ComponentHelpers do
     apply(
       view(namespace),
       :render,
-      [template, Keyword.merge(assigns, [do: block])]
+      [template, Keyword.merge(assigns, do: block)]
     )
   end
 
   def view_opts(namespace) do
-    %{root: "lib/phoenix_component_folders_web/components/#{namespace}/templates",
+    %{
+      root: "lib/phoenix_component_folders_web/components/#{namespace}/templates",
       namespace: PhoenixComponentFoldersWeb,
-      path: ""}
+      path: ""
+    }
   end
 
   defp view(name) do
