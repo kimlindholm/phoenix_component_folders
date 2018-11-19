@@ -29,5 +29,4 @@ defmodule PhoenixComponentFoldersWeb.ConnCase do
   setup _tags do
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
-
 end

@@ -6,16 +6,16 @@ defmodule PhoenixComponentFoldersWeb.ErrorViewTest do
 
   test "renders 404.html" do
     assert render_to_string(PhoenixComponentFoldersWeb.ErrorView, "404.html", []) ==
-           "Page not found"
+             "Page not found"
   end
 
   test "render 500.html" do
     assert render_to_string(PhoenixComponentFoldersWeb.ErrorView, "500.html", []) ==
-           "Internal server error"
+             "Internal server error"
   end
 
   test "render any other" do
     assert render_to_string(PhoenixComponentFoldersWeb.ErrorView, "505.html", []) ==
-           "Internal server error"
+             "Internal server error"
   end
 end

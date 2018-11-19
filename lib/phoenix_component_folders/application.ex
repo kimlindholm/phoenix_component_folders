@@ -13,7 +13,7 @@ defmodule PhoenixComponentFolders.Application do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the endpoint when the application starts
-      supervisor(PhoenixComponentFoldersWeb.Endpoint, []),
+      supervisor(PhoenixComponentFoldersWeb.Endpoint, [])
       # Start your own worker by calling: PhoenixComponentFolders.Worker.start_link(arg1, arg2, arg3)
       # worker(PhoenixComponentFolders.Worker, [arg1, arg2, arg3]),
     ]

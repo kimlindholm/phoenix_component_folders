@@ -26,9 +26,12 @@ defmodule PhoenixComponentFoldersWeb do
     end
   end
 
-  def view(opts \\
-      [root: "lib/phoenix_component_folders_web/templates",
-       namespace: PhoenixComponentFoldersWeb]) do
+  def view(
+        opts \\ [
+          root: "lib/phoenix_component_folders_web/templates",
+          namespace: PhoenixComponentFoldersWeb
+        ]
+      ) do
     quote do
       use Phoenix.View, unquote(opts)
 
@@ -66,6 +69,7 @@ defmodule PhoenixComponentFoldersWeb do
   defmacro __using__(which) when is_atom(which) do
     apply(__MODULE__, which, [])
   end
+
   defmacro __using__({which, opts}) when is_atom(which) do
     apply(__MODULE__, which, [opts])
   end

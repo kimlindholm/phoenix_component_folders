@@ -28,5 +28,4 @@ defmodule PhoenixComponentFoldersWeb.ChannelCase do
   setup _tags do
     :ok
   end
-
 end
