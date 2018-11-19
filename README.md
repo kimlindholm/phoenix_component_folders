@@ -3,7 +3,6 @@
 [![CircleCI](https://circleci.com/gh/kimlindholm/phoenix_component_folders/tree/master.svg?style=shield)](https://circleci.com/gh/kimlindholm/phoenix_component_folders/tree/master)
 [![Ebert](https://ebertapp.io/github/kimlindholm/phoenix_component_folders.svg)](https://ebertapp.io/github/kimlindholm/phoenix_component_folders)
 [![codebeat badge](https://codebeat.co/badges/bb4bb0c2-e08c-4c13-b1a3-07b5f354a071)](https://codebeat.co/projects/github-com-kimlindholm-phoenix_component_folders-master)
-[![Dependency Status](https://www.versioneye.com/user/projects/59cdfd98368b083214208a92/badge.svg?style=shield)](https://www.versioneye.com/user/projects/59cdfd98368b083214208a92)
 
 Reusable UI components on Phoenix framework
 
@@ -90,8 +89,8 @@ In all the code above, remember to replace occurences of `MyApp`, `my_app`, `Pho
 ### Requirements
 
 * Phoenix 1.3.0 or later
-* Elixir 1.4 or later
-* Erlang 19 or later
+* Elixir 1.7 or later
+* Erlang 21 or later
 
 ### Installation
 
